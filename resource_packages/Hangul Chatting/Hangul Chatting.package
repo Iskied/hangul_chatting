@@ -1,0 +1,15 @@
+mod = [
+	"Hangul Chatting"
+]
+
+package = [
+	"resource_packages/Hangul Chatting/Hangul Chatting"
+]
+
+slug = [
+	"fonts/*"
+]
+
+lua = [
+	"scripts/mods/Hangul Chatting/*"
+]
