@@ -18,5 +18,5 @@ function mod.on_disabled()
 end
 
 function mod.on_unload()
-  mod.on_disable()
+  mod.on_disabled()
 end
