@@ -4,24 +4,19 @@ local batang_font_path = "fonts/mods/Hangul Chatting/KoBatang-Medium"
 local arial = Fonts.arial
 local chat_output_font = Fonts.chat_output_font
 
-Fonts.kobatang_arial = arial
-Fonts.kobatang_arial[1] = batang_font_path
-Fonts.kobatang_chat_output_font = chat_output_font
-Fonts.kobatang_chat_output_font[1] = batang_font_path
+local old_arial = arial[1]
+local old_chat  = chat_output_font[1]
 
-local init = true
+function mod.on_enabled()
+  arial[1] = batang_font_path
+  chat_output_font[1] = batang_font_path
+end
 
-mod:hook("ChatGui", "update", function(func, self, ...)
-  if init then
-    self.chat_input_widget.style.text.font_type = "kobatang_arial"
-    self.chat_output_widget.style.text.font_type = "kobatang_chat_output_font"
-    init = false
-  end
+function mod.on_disabled()
+  arial[1] = old_arial
+  chat_output_font[1] = old_chat
+end
 
-  return func(self, ...)
-end)
-
-mod.on_unload = function()
-  Fonts.kobatang_arial = arial
-  Fonts.kobatang_chat_output_font = chat_output_font
+function mod.on_unload()
+  mod.on_disable()
 end
