@@ -1,6 +1,6 @@
 local mod = get_mod("Hangul Chatting")
 
-local batang_font_path = "fonts/mods/Hangul Chatting/KoPubWorld Batang_Pro Medium_subset"
+local batang_font_path = "fonts/mods/Hangul Chatting/kpwb"
 local arial = Fonts.arial
 local chat_output_font = Fonts.chat_output_font
 
